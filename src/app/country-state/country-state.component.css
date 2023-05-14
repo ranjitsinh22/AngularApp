@@ -1,0 +1,29 @@
+.container {display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .country, .st {
+    margin-right: 10px;
+  }
+  
+  select {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px ;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    padding: 10px;
+  }
+  

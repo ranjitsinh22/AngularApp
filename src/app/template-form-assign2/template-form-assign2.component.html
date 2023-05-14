@@ -1,0 +1,82 @@
+<h1>@Template form Assignment-2</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-left rounded shadow py-5">
+
+      <h2>Job Application Form</h2>
+
+      <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)">
+        <div class="form-group">
+          <label for="username">FullName</label>
+          <input username required type="text" class="form-control" id="username" name="username" ngModel
+            placeholder="Enter username" [(ngModel)]="username">
+          <small class="text-success" *ngIf="username">User Name is:{{username}}</small>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input #address="ngModel" type="text" id="address" name="address" class="form-control"
+            placeholder="Enter Detailed adress" ngModel required>
+          <span class="text-danger" *ngIf="!address.valid && address.touched">Please Enter Valid Details</span>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact Number:</label>
+          <input #contact="ngModel" contact type="number" id="contact" name="contact" class="form-control"
+            placeholder="Enter Contact Number" maxlength="10" ngModel>
+          <small class="text-danger" *ngIf="!contact.invalid && contact.touched">Enter valid Number</small>
+
+        </div>
+
+        <div class="form-group">
+          <label for="DOB">Date of Birth:</label>
+          <input type="date" id="DOB" name="DOB" class="form-control" ngModel>
+        </div>
+
+
+        <div class="form-group" *ngFor="let gender of genders">
+          <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}" class="custom-control-input"
+            [ngModel]="defaultGenderValue">
+          <label for="{{gender.id}}" class="custom-control-label">{{gender.value}}</label>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input #email="ngModel" required type="text" class="form-control" id="email" name="email" ngModel
+            placeholder="Enter email">
+          <small class="text-danger" *ngIf="email.invalid && email.touched">Enter valid email</small>
+        </div>
+
+        <div class="form-group">
+          <label for="degree">Select Qualification</label>
+          <select (change)="getDegree($event)" name="degree" class="form-control" id="degree" [ngModel]="defaultCourse">
+            <option [value]="degree" *ngFor="let degree of degreeArr">
+              {{degree}}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="job">Job Post</label>
+          <select (change)="getJob($event)" name="job" class="form-control" id="job" [ngModel]="defaultCourse">
+            <option [value]="job" *ngFor="let job of jobArr">
+              {{job}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" class="form-control" ngModel
+            placeholder="Enter Strong Password" minlength="8" maxlength="16" required>
+        </div>
+        <div class="btn justify-content-center">
+          <button type="submit" [disabled]="!myForm.valid" class="  btn btn-primary ">Submit</button>
+        </div>
+        <div class="btn justify-content-center">
+          <button type="clear" class="  btn btn-warning ">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

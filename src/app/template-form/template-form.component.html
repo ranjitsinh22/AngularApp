@@ -1,0 +1,80 @@
+<!-- 1)Form-template driven form- created using diective ngForm,ngModel-useful for simple form - need to import formModule &  2) reactive form-used for complex form
+      ngModel-bind the value of html control(input ,select,textarea)
+    
+    -->
+
+
+<!-- server kadun data alyvaech html render zale pahije -->
+<div *ngIf="empArr">
+    <table>
+        <p>Hi, Welcome to angular</p>
+    </table>
+</div>
+<!-- grouping form control -->
+<!-- by using ngModelGroup-we can create nested form /create and binds a formGroup instance to a DOM Elemment -->
+
+
+<h1>@Template Form</h1>
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 text-left rounded shadow py-5">
+            <div>
+                <h2>Simple Form</h2>
+            </div>
+            <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)">
+                <div class="form-group">
+                    <label for="username">UserName</label>
+                    <input #username required type="text" class="form-control" id="username" name="username" ngModel
+                        placeholder="Enter username">
+                    <small class="text-danger" *ngIf="!username.valid && username.touched">Enter valid User Name</small>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input email required type="text" class="form-control" id="email" name="email" ngModel
+                        placeholder="Enter email" #email="ngModel">
+                    <small class="text-danger" *ngIf="!email.valid && email.touched">Enter valid email</small>
+                </div>
+                <label for="gender">Select Gender</label>
+
+                <div class="form-group" *ngFor="let gender of genders">
+
+                    <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}"
+                        class="custom-control-input" [ngModel]="defaultGenderValue">
+                    <label for="{{gender.id}}" class="custom-control-label">{{gender.value}}</label>
+                </div>
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select name="course" class="form-control" id="course" [ngModel]="defaultCourse">
+                        <option [value]="course" *ngFor="let course of courseArr">
+                            {{course}}
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" ngModel
+                        placeholder="Enter Strong Password" minlength="8" maxlength="16" required>
+                </div>
+                <span class="text-danger" *ngIf="!email.valid && email.touched">Enter Password</span>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Submit</button>
+
+                </div>
+                <div class="row justify-content-center" *ngIf="isSubmitted">
+                    <h2>Form Data</h2>
+                    <p>UserName: {{user.userName}}</p>
+                    <p>Email: {{user.email}}</p>
+                    <p>Course: {{user.course}}</p>
+                    <p>Gender: {{user.gender}}</p>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

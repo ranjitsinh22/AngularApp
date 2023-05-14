@@ -1,0 +1,94 @@
+<h1>@Template Form Assignment-3</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-4 text-left rounded shadow  border-3 bg-info
+        ">
+            <h2 class="text-center text-danger">Template Form  Assignment</h2>
+
+            <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)">
+
+                <div class="form-group">
+                    <label for="firstname">First Name:</label>
+                    <input #firstname="ngModel" type="text" class="form-control" id="firstname" name="firstname"
+                        required minlength="5" maxlength="5" ngModel placeholder="Enter First Name" ngModel>
+                    <small class="text-danger " *ngIf="!firstname.valid && firstname.touched " > Please Enter First
+                        Name(minimum 5 char)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Last Name:</label>
+                    <input #lastname="ngModel" type="text" class="form-control" id="lastname" name="lastname" required
+                      minlength="5"  maxlength="10" ngModel placeholder="Enter Last Name" ngModel>
+                    <small class="text-danger" *ngIf="!lastname.valid && lastname.touched "> Please Enter last
+                        Name(maximum 10 char)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" required placeholder="please enter the age" 
+                     ngModel  #ages="ngModel" [(ngModel)]= "Age" value="Age">
+                    <small *ngIf="ages.touched && Age < 17 || Age >20" class="text-danger">Please Enter Valid Age(age should be between 17 to 20)</small>
+                 </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input email #email="ngModel" type="email" class="form-control" id="email" name="email" required
+                        ngModel placeholder="Enter Email">
+                    <small class="text-danger" *ngIf="!email.valid && email.touched">Please Enter Valid Email </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input #phoneInput="ngModel" type="tel" class="form-control" id="phone" name="phone" required [(ngModel)]="phoneNumber"
+                      maxlength="10" minlength="10" placeholder="Enter Phone Number">
+                    <small class="text-danger" *ngIf="phoneInput.touched && phoneInput.invalid">Please enter a valid phone number (10 digits required)</small>
+                  </div>
+                  
+                
+                <label for="gender">Gender:</label>
+                <div class="form-group" *ngFor="let gender of genders">
+                    <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}"
+                        class="custom-control-input" [ngModel]="defaultGenderValue">
+                    <label for="{{gender.id}}" class="custom-control-label">{{gender.value}}</label>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select city name="city" class="form-control" id="city" [(ngModel)]="defaultCity">
+                      <option [value]="city" *ngFor="let city of cityArr">
+                        {{ city }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <div class="input-group">
+                      <input #passwordInput="ngModel" [type]="showPassword ? 'text' : 'password'" class="form-control" id="password"
+                        name="password" required [(ngModel)]="password" placeholder="Enter Password">
+    
+                    </div>
+                    <small class="text-danger" *ngIf="passwordInput.invalid && passwordInput.touched">
+                      Please enter a valid password (e.g., Abc@123)
+                    </small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" required
+                      [(ngModel)]="confirmPassword" placeholder="Confirm Password">
+                    <small class="text-danger" *ngIf="password !== confirmPassword && passwordInput.touched">
+                     Confirm Passwords should be same as above
+                    </small>
+                  </div>
+                  
+
+                  <div class=" text-center  py-4 ">
+                    <button type="submit" [disabled]="!myForm.valid" class="  btn btn-dark text-white ">Submit</button>
+                  </div>
+                  <!-- <div class="btn justify-content-center">
+                    <button type="reset" class="  btn btn-warning ">Reset</button>
+                  </div> -->
+            </form>
+        </div>
+    </div>
+</div>

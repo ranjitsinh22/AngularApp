@@ -1,0 +1,79 @@
+<h1>@Structual Directive Assignment</h1>
+<div class="container">
+
+    <label>
+
+        <input type="checkbox" [(ngModel)]="showto" /> Click Checkbox !
+
+    </label>
+
+    <div class="col-md-4  " *ngIf="showto">
+
+        <div>After Clicking the Checkbox</div>
+
+    </div>
+
+</div>
+
+<h2 class="container">Top Programming Languages</h2>
+
+<ol class="container" *ngFor="let g of array let i=index" style="list-style: none;">
+
+
+
+    <li *ngIf="i<3" [ngClass]="{
+    
+       'text-primary':g.course=='JavaScript',
+    
+       'text-success':g.course=='Java',
+    
+       'text-danger':g.course=='Python'
+    
+    }">{{i+1}}. {{g.course}}</li>
+
+</ol>
+
+
+<h2>@ngSwitchCase Dropdown </h2>
+<div class="container bg-light dropdown">
+    <div class="row">
+        <div class="col-md-4">
+
+            <ol class="list-group list-inline">
+                <li>
+                    <h3 class="text-danger">Car Brand:-</h3>
+                    <select class="form-control" (change)="getSelectedValue1($event)">
+                        <option class="dropdown-item" value="Select Car">Select Car</option>
+                        <option class="dropdown-item" value="Tata">Tata</option>
+                        <option class="dropdown-item" value="Mahindra">Mahindra</option>
+                        <option class="dropdown-item" value="Suzuki">Suzuki</option>
+                        <option class="dropdown-item" value="Honda">Honda</option>
+                    </select>
+                </li>
+            </ol>
+
+        </div>
+        <div class="col-md-12" [ngSwitch]="getSelectedValue1">
+            <h2 class="text-primary">Car</h2>
+            <select class="text-success" *ngSwitchCase="'Tata'">
+                <option class="text-primary" value="Nexon">Nexon</option>
+                <option class="text-primary" value="Harrier">Harrier</option>
+            </select>
+
+            <select class="text-success" *ngSwitchCase="'Mahindra'">
+                <option class="text-primary" value="Thar">Thar</option>
+                <option class="text-primary" value="Scorpio">Scorpio</option>
+            </select>
+
+            <select class="text-success" *ngSwitchCase="'Suzuki'">
+                <option class="text-primary" value="Ertiga">Ertiga</option>
+                <option class="text-primary" value="Swift">Swift</option>
+            </select>
+
+            <select name="" id="" *ngSwitchCase="'Honda'">
+                <option class="text-primary" value="City">City</option>
+                <option class="text-primary" value="Verena">Verena</option>
+            </select>
+        </div>
+    </div>
+</div>

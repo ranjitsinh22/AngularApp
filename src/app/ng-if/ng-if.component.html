@@ -1,0 +1,10 @@
+<h1>@ngIf</h1>
+<p *ngIf="showMe">ng-if works!</p>
+
+<div *ngIf="showMe; else elseBlock">
+    content show ,when condtion true.
+</div>
+
+<ng-template #elseBlock>
+    content show ,when condition is false.
+</ng-template>

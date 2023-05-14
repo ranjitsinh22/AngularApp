@@ -1,0 +1,7 @@
+.container{
+    display:contents;
+    border: 2px solid black ;
+}
+.btn{
+    display: flex;
+}

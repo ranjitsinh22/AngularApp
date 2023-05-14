@@ -1,0 +1,36 @@
+
+<!-- one way data binding -->
+<h1>@One way data binding</h1>
+<h2>@string interpolation</h2>
+<div>
+<h1>Let's create our first Angular Project which is :{{title}}.</h1>
+<h3>My Technology Stacks are :{{skills}}</h3>
+<h3>My Name is :{{myName}}</h3>
+</div>
+<!-- function call  -->
+<div>{{getName()}}</div>
+
+<!-- proprty binding -->
+<h2>@Property Binding</h2>
+<div>
+    <img [src]="imgurl" alt="">
+</div>
+
+<!-- Event Binding -->
+<h2>@Event Binding</h2>
+<input (blur)="changeImage($event)" [value]="imgurl">
+
+<div><button (click)="show()">Click Me</button></div>
+
+<!-- two way data binding -->
+<h1>@Two way data binding</h1>
+
+<p>
+    User Name: <input type="text" [(ngModel)]="userName">
+</p>
+
+<p>
+    {{userName}}
+</p>
+
+
