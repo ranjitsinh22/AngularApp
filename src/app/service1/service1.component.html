@@ -1,0 +1,23 @@
+<h1>@Service Lecture</h1>
+
+
+<h3>service-1</h3>
+
+
+
+<!-- Services in Angular are reusable blocks of code that provide specific functionality or data to different parts of an Angular application. 
+    They act as intermediaries between components and help in organizing and sharing common code or data across the application.
+     Services make it easier to manage and maintain the application by promoting code reuse and separation of concerns. -->
+
+  <h3>@member name</h3>   
+
+  <button type="submit" (click)="btnClick()" class="btn btn-primary">Submit</button>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.name}} 
+    </li>
+</ul>
+
+<input type="date" [(ngModel)]="age">
+<button class="btn btn-primary" (click)="ageCalculator()">Calculate Age</button>
+<p *ngIf="age">{{showAge}}</p>

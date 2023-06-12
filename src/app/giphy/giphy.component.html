@@ -1,0 +1,21 @@
+<h1>@ Giphy Assignment- Routing</h1>
+
+
+<div class="container">
+  <nav class="header"><p>GIPHY</p></nav>
+
+  <div class="search">
+    <h4>Search for GIFs</h4>
+    <input class="search-input" type="text" [(ngModel)]="searchTerm"  placeholder="Search GIFs" style="width: 800px;">
+    <button  class="search-button" (click)="onSearchClick()">Search</button>
+  </div>
+
+
+  <div class="image-gallery">
+    <div class="image-container" *ngFor="let gif of gifs">
+      <div class="gif-container">
+        <img [src]="gif.original.url" alt="GIF">
+      </div>
+    </div>
+  </div>
+</div>

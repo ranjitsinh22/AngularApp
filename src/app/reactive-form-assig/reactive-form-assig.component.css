@@ -1,0 +1,48 @@
+.container{border: 2px solid brown;
+    border-radius: 10px;
+    display: flexbox;
+    background-color: aquamarine;
+}
+
+.userForm {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color:lavender;
+    border: 1px solid brown;
+  }
+  
+  .accountForm {
+    flex: 1;
+    margin-right: 10px;
+    background-color:lavender;
+    border: 1px solid rgb(203, 83, 83);
+
+
+  }
+
+  .profile{
+display: inline-block;
+width: 150px;
+height: 200px;
+  }
+  
+  .userinfo{
+    display: flex;
+  }
+  .country{
+    display: flex;
+    width: 100%;
+  }
+  .con{
+    display: inline-block;
+    width: 200px;
+    margin-right: 10px;
+  }
+
+  .invalid-input {
+    border: 1px solid red;
+    box-shadow: 0 0 5px #ff000021;
+  }
+  
+  

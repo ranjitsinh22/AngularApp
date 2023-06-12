@@ -1,0 +1,31 @@
+.container::content {border: 1px solid black;
+    background-color:snow;
+   }
+   .profile-image {
+     margin: 50px;
+     width: 200px; /* Adjust the width as needed */
+     height: 202px; /* Adjust the height as needed */
+ 
+   }
+   .example-container mat-form-field + mat-form-field {
+     margin-left: 8px;
+   }
+ 
+   .example-container-right-align {
+     text-align: right;
+   }
+ 
+   input.example-container-right-align::-webkit-outer-spin-button,
+   input.example-container-right-align::-webkit-inner-spin-button {
+     display: none;
+   }
+   .example-form {
+     min-width: 150px;
+     max-width: 500px;
+     width: 100%;
+   }
+ 
+   .example-full-width {
+     width: 100%;
+   }
+ 

@@ -1,0 +1,30 @@
+<h1>@cricbuzz API Assignment</h1>
+
+<div class="container border border-dark bg-light">
+
+    <table class="table">
+<thead>
+    <tr>
+        <th>sr.No</th>
+        <th>Match Id</th>
+        <th>Series Name</th>
+        <th>Match Format </th>
+        <th>State </th>
+        <th>Status </th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let match of matchesArr; index as i">
+        <td>{{i+1}}</td>
+        <td>{{match.matchId}}</td>
+        <td>{{match.seriesName}}</td>
+        <td>{{match.matchFormat}}</td>
+        <td>{{match.state}}</td>
+        <td>{{match.status}}</td>
+    </tr>
+</tbody>
+
+    </table>
+
+
+  </div>

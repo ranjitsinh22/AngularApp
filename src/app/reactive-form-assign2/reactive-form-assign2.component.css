@@ -1,0 +1,14 @@
+.profilepic{
+    display: inline-block;
+    justify-content: center;
+    width: 150px;
+    height: 200px;
+      }
+      .submit-button {
+        margin-bottom: 10px;
+      }
+      input.ng-invalid.ng-touched{
+        border:1px solid red;
+        box-shadow: 0 0 5px #ff000021;
+    }
+      

@@ -1,0 +1,139 @@
+<h1>@Reactive Form Assignment</h1>
+
+<div class="container ">
+
+    <div class="row justify-content-center py-5 border border-dark">
+        <div class="text-left mx-5 py-3  ">
+            <img class="profile" src="assets/user profile.png " alt="user profile photo">
+            <div class="userinfo">
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero debitis sint minus repudiandae expedita
+                doloribus officia maxime, nulla nihil dolores sit eum. Natus consequuntur dolores voluptate dolorem
+                sapiente necessitatibus laudantium!  </p> 
+            </div>
+        </div>
+
+        <div class="userForm col-md-6 text-left rounded shadow py-3 ">
+            <form [formGroup]="myReactiveForm" (ngSubmit)="OnSubmit()" novalidate>
+                <div>
+                    <h2>User Details</h2>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input fullname type="text" class="form-control" formControlName="fullname"
+                        placeholder="Enter Full Name" required minlength="10">
+                        <small class="text-danger" *ngIf="myReactiveForm.get('fullname').invalid && (myReactiveForm.get('fullname').touched || submitted)">
+                        Please Enter Your Full Name
+                        </small>
+                </div>
+
+                <div class="form-group">
+                      <label for="birthdate">Your Birth Date:</label>
+                      <input type="date" class="form-control" formControlName="birthdate" placeholder="Select Your Birthdate" required>
+                      <small class="text-danger" *ngIf="myReactiveForm.get('birthdate').invalid && (myReactiveForm.get('birthdate').touched || submitted)">
+                        Please select a valid Birth Date.
+                      </small>
+                     
+                    </div>
+                    <div class="form-group">
+                      <label for="course">Select Gender:</label>
+                      <div class="custom-control custom-radio" *ngFor="let gender of genders">
+                          <input class="custom-control-input" type="radio" formControlName="gender"
+                              value="{{gender.value}}" id="{{gender.id}}">
+                          <label for="{{gender.id}}">{{gender.value}}</label>
+                      </div>
+  
+    
+                      <small class="text-danger"
+                        *ngIf="myReactiveForm.get('gender').invalid && (myReactiveForm.get('gender').touched || submitted)">
+                        Please select a gender.
+                      </small>
+                    </div>
+                    
+                <div class=" form-inline country">
+                    <div class="con form-group">
+                        <label for="country">Country</label>
+                        <select country name="country" class="form-control" id="country"  required>
+                            <option [value]="country" *ngFor="let country of countryArr">
+                                {{ country }}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input phone type="tel" class="form-control" id="phone" required
+                            placeholder="Enter Phone Number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bioTextArea">Bio :</label>
+                    <textarea class="form-control" id="bioTextArea" rows="3" maxlength="256" formControlName="bioTextArea" placeholder="Tell Us About Yourself" required></textarea>
+                    <small class="text-danger" *ngIf="myForm.get('description').errors?.maxlength" class="error-message">Max 256 Word Only</small>
+                </div>
+
+
+
+
+            </form>
+        </div>
+
+
+
+
+        <div class="accountForm col-md-6 text-left rounded shadow py-3">
+          <div>
+            <h2>Account Details</h2>
+          </div>
+        
+          <form [formGroup]="myReactiveForm1" (ngSubmit)="onSubmit()" novalidate>
+                        <div class="form-group">
+              <label for="username">Username</label>
+              <input username type="text" class="form-control" formControlName="username" placeholder="Enter username" required minlength="5" maxlength="25" pattern="[a-zA-Z0-9]+"
+              title="Username should contain only letters and numbers">
+              <small class="text-danger" *ngIf="myReactiveForm1.get('username').invalid && (myReactiveForm1.get('username').touched || submitted)">
+                Please Enter User Name
+              </small>
+            </div>
+        
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="text" class="form-control" formControlName="email" placeholder="Enter Email">
+              <small class="text-danger"
+                  *ngIf="!myReactiveForm1.get('userDetails.email').valid && myReactiveForm1.get('userDetails.email').touched">Please
+                  enter valid email</small>
+            </div>
+        
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <div class="input-group">
+                <input password type="password" class="form-control" formControlName="password" placeholder="Enter password">
+              </div>
+              <small class="text-danger" *ngIf="myReactiveForm1.get('password').dirty && myReactiveForm1.get('password').invalid">
+                Please enter a valid password (e.g., Abc@123)
+              </small>
+            </div>
+        
+            <div class="form-group">
+              <label for="confirmpassword">Confirm Password:</label>
+              <input confirmpassword type="confirmpassword" class="form-control" formControlName="confirmpassword" placeholder="Confirm password">
+              <small class="text-danger" *ngIf="myReactiveForm1.hasError('passwordMismatch') && myReactiveForm1.get('confirmpassword').dirty">
+                Confirm passwords should match
+              </small>
+            </div>
+            </form>
+        </div>
+
+        <div class="text-center form-group py-3 ">
+            <label>
+              <input class="text-info" type="checkbox" formControlName="acceptTerms">
+              I accept the terms and conditions
+            </label>
+            <small *ngIf="myReactiveForm1.get('acceptTerms').invalid && myReactiveForm1.get('acceptTerms').touched" class="error-message">
+              You must accept the terms and conditions.
+            </small>
+          </div>
+        <div class="text-center ">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>

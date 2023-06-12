@@ -1,0 +1,165 @@
+<!-- Reactive Form Assignment -->
+<h1>@Reactive Form Assignment</h1>
+
+<div class="container border border-dark bg-light">
+  <div class="row border border-danger">
+
+    <!-- user profile div -->
+    <div class="col-sm-3 py-4 border border-success">
+      <div class="mb-4">
+        <h2 class="text-center">User Profile</h2>
+      </div>
+      <div class="profile mr-3">
+        <img class="profilepic rounded-circle" src="assets/user profile.png" alt="user profile photo">
+        <h3>Ranjitsinh Gavali</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat maiores ipsam nam corrupti ipsum, provident
+          veniam laudantium illum! Eaque quasi quis dignissimos perspiciatis ducimus libero ut odit hic doloremque quos?</p>
+      </div>
+    </div>
+
+    <!-- user details div -->
+    <div class="col-sm-5 py-4 border border-warning">
+      <div class="mb-4">
+        <h2 class="text-center">User Details</h2>
+      </div>
+
+      <form [formGroup]="userDetailsForm" (ngSubmit)="onUserDetailsSubmit()">
+        <div class="form-group py-2">
+          <label for="fullName">Full Name <span class="required text-danger">*</span></label>
+          <input type="text" class="form-control" id="fullName" formControlName="fullName" required >
+          <!-- Full Name Validation -->
+          <small class="text-danger" *ngIf="userDetailsForm.get('fullName').invalid && userDetailsForm.get('fullName').touched">
+            Full Name is required
+          </small>
+        </div>
+
+        <div class="form-group py-2">
+          <label for="birthdate">Your Birthdate <span class="required text-danger">*</span></label>
+          <input type="date" class="form-control" id="birthdate" formControlName="birthdate" required>
+          <small class="text-danger" *ngIf="userDetailsForm.get('birthdate').invalid && userDetailsForm.get('birthdate').touched">
+            Birthdate is required
+          </small>
+        </div>
+
+
+
+        <div class="form-group py-2">
+          <label for="gender">Select Gender:<span class="required text-danger">*</span></label>
+          <div class="custom-control custom-radio" *ngFor="let gender of genders">
+              <input class="custom-control-input" type="radio" formControlName="gender"
+                  value="{{gender.value}}" id="{{gender.id}}">
+              <label for="{{gender.id}}">{{gender.value}}</label>
+          </div>
+          <small class="text-danger" *ngIf="userDetailsForm.get('gender').invalid && userDetailsForm.get('gender').touched">
+            Please select Gender
+          </small>
+      </div>
+
+
+        <div class="form-group py-2">
+          <label for="country">Country:<span class="required text-danger">*</span></label>
+          <select class="form-control" id="country" formControlName="country" required>
+            <option value="">Select a country</option>
+            <option *ngFor="let country of countries" [value]="country">{{ countries.name }}</option>
+          </select>
+          <small class="text-danger" *ngIf="userDetailsForm.get('countries').invalid && userDetailsForm.get('countries').touched">
+            Please select a country
+          </small>
+        </div>
+
+        <!-- Inline div of country code and phone number -->
+        <div class="form-inline row py-2">
+          <div class="form-group col-md-4">
+            <label for="countryCode">Country Code <span class="required text-danger">*</span></label>
+            <select class="form-control" id="countryCode" formControlName="countryCode" required>
+              <option value="">Select Country Code</option>
+              <option *ngFor="let country of countries" [value]="country.code">{{ country.code }}</option>
+            </select>
+            <small class="text-danger" *ngIf="userDetailsForm.get('countryCode').invalid && userDetailsForm.get('countryCode').touched && userDetailsForm.get('countryCode').value === ''">
+              Country Code Required
+            </small>
+          </div>
+
+          <div class="form-group col-md-8">
+            <label for="phone">Phone Number <span class="required text-danger">*</span></label>
+            <input type="tel" class="form-control" id="phone" formControlName="phone" required minlength="10" maxlength="12">
+            <small class="text-danger" *ngIf="userDetailsForm.get('phone').invalid && userDetailsForm.get('phone').touched">
+              Please Enter Valid Phone Number
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bio">Bio :<span class="required text-danger">*</span></label>
+          <textarea class="form-control" id="bio" rows="3" maxlength="256" formControlName="bio" placeholder="Tell Us About Yourself" required></textarea>
+          <small class="text-danger" *ngIf="userDetailsForm.get('bio').invalid && userDetailsForm.get('bio').touched">
+            Please Write Something About Yourself
+          </small>
+        </div>
+      </form>
+    </div>
+
+    <!-- Account details -->
+    <div class="col-sm-4 py-4 border border-primary">
+      <div class="mb-4">
+        <h2 class="text-center">Account Details</h2>
+      </div>
+      <form [formGroup]="accountDetailsForm" (ngSubmit)="onAccountDetailsSubmit()">
+        <div class="form-group py-2">
+          <label for="username">User Name <span class="required text-danger">*</span></label>
+          <input type="text" class="form-control" id="username" formControlName="username" required>
+          <!-- User Name Validation -->
+          <small class="text-danger" *ngIf="accountDetailsForm.get('username').invalid && accountDetailsForm.get('username').touched">
+            User Name is required
+          </small>
+        </div>
+
+        <div class="form-group py-2">
+          <label for="email">Email <span class="required text-danger">*</span></label>
+          <input type="email" class="form-control" id="email" formControlName="email" required>
+          <!-- Email Validation -->
+          <small class="text-danger" *ngIf="accountDetailsForm.get('email').invalid && accountDetailsForm.get('email').touched">
+            Please Enter a Valid Email
+          </small>
+        </div>
+
+        <div class="form-group py-2">
+          <label for="password">Password <span class="required text-danger">*</span></label>
+          <input type="password" class="form-control" id="password" formControlName="password" required>
+          <!-- Password Validation -->
+          <small class="text-danger" *ngIf="accountDetailsForm.get('password').invalid && accountDetailsForm.get('password').touched">
+            Password is required
+          </small>
+        </div>
+
+        <div class="form-group py-2">
+          <label for="confirmpassword">Confirm Password <span class="required text-danger">*</span></label>
+          <input type="password" class="form-control" id="confirmpassword" formControlName="confirmpassword" required>
+          <!-- Confirm Password Validation -->
+          <small class="text-danger" *ngIf="accountDetailsForm.get('confirmpassword').invalid && accountDetailsForm.get('confirmpassword').touched">
+            Password is required
+          </small>
+        </div>
+
+           <!-- Checkbox -->
+           <div class="form-group py-2 text-center">
+            <input class="form-check-input" type="checkbox" id="termsAndConditions" formControlName="termsAndConditions">
+            <label class="form-check-label" for="termsAndConditions">I agree to the Terms and Conditions</label>
+            <!-- Validation for Checkbox, the user must check the checkbox -->
+            <small class="text-danger" *ngIf="accountDetailsForm.get('termsAndConditions').invalid && accountDetailsForm.get('termsAndConditions').touched">
+              You must agree to the Terms and Conditions.
+            </small>
+          </div>
+  
+          <!-- Button -->
+          <div class="text-center row justify-content-center mt-4">
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+      </form>
+      <!-- Account details form closed -->
+    </div>
+  </div>
+</div>
+<!-- Closing container div -->

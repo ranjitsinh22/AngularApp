@@ -10,7 +10,7 @@ export class TemplateFormLecture1Component implements OnInit {
 
 OnSubmit(form:HTMLFormElement){
   // if(form.valid){ //send value to server only if form is valid
-  console.log('My template form value' , form); //to get NgForm
+  console.log('My template form value' , form.value); //to get NgForm
   // console.log('My template form value' , form.value); //to get form value
   // console.log('User Name is:' , form.controls['username'].value); //to get particular value 
   // console.log('Is form Submitted:' , form.submitted); //to check form is submitted by user 

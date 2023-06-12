@@ -1,0 +1,12 @@
+.container{
+   
+    display: flex;
+    text-align: center;
+}
+table{
+    border: 1px solid black;
+}
+.reset{
+    margin-left: 40px;
+    
+}

@@ -1,4 +1,4 @@
-<!-- server kadun data alyvaech html render zale pahije -->
+server kadun data alyvaech html render zale pahije
 <div *ngIf="empArr">
     <table>
         <p>Hi, Welcome to angular</p>
@@ -7,11 +7,9 @@
 <!-- grouping form control -->
 <!-- by using ngModelGroup-we can create nested form /create and binds a formGroup instance to a DOM Elemment -->
 
-
 <h1>@Template Form Lecture-3</h1>
 <div class="container">
     <div class="row justify-content-center">
-
         <div class="col-md-6 text-left rounded shadow py-5">
             <div>
                 <h2>Simple Form</h2>
@@ -24,41 +22,36 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input email required type="text" class="form-control" id="email" name="email" [ngModel]="user.email"
-                        placeholder="Enter email" #email="ngModel" pattern="^[A-Za-z0-9._%+-]+@codemindtechnology.com$">
-                    <!-- <small class="text-danger" *ngIf="!email.valid && email.touched">Enter valid email</small> -->
+                    <input email required type="text" class="form-control" id="email" name="email"
+                        [ngModel]="user.email" placeholder="Enter email" #email="ngModel"
+                        pattern="^[A-Za-z0-9._%+-]+@codemindtechnology.com$">
                     <small class="text-danger" *ngIf="email.errors?.pattern">
                         Enter a valid email address with the domain "codemindtechnology.com"
-                      </small>
+                    </small>
                 </div>
                 <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
-
-                <div class="form-group" *ngFor="let gender of genders" >
-                        <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}"
-                            class="custom-control-input" [ngModel]="defaultGenderValue">
-                        <label for="{{gender.id}}" class="custom-control-label">{{gender.value}}</label>
+                    <div class="form-group" *ngFor="let gender of genders">
+                        <input type="radio" [id]="gender.id" name="gender" [value]="gender.value"
+                            class="custom-control-input" [(ngModel)]="user.gender">
+                        <label [for]="gender.id" class="custom-control-label">{{ gender.value }}</label>
                     </div>
                     <div class="form-group">
                         <label for="course">Select Course</label>
-                        <select name="course" class="form-control" id="course" [ngModel]="defaultCourse">
-                            <option [value]="course" *ngFor="let course of courseArr">
-                                {{course}}
-                            </option>
+                        <select name="course" class="form-control" id="course" [(ngModel)]="user.course">
+                            <option *ngFor="let course of courseArr" [value]="course">{{ course }}</option>
                         </select>
-
                     </div>
                 </div>
                 <button type="submit" [disabled]="!myForm.valid" class="btn btn-success">Submit</button>
+
                 <div class="row justify-content-center" *ngIf="isSubmitted">
                     <h2>Form Data</h2>
                     <p>UserName: {{user.userName}}</p>
                     <p>Email: {{user.email}}</p>
-                    <p>Course: {{user.course}}</p>
-                    <p>Gender: {{user.gender}}</p>
-
+                    <p>Course: {{user.course }}</p>
+                    <p>Gender: {{user.gender }}</p>
                 </div>
             </form>
         </div>
-           
     </div>
 </div>

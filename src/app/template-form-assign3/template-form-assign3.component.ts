@@ -38,6 +38,7 @@ phoneNumber:string='';
     
   }
 
-
+  // form.controls["course"].setValue("Angular");
+  // form.controls["gender"].setValue("Male");
 
 }

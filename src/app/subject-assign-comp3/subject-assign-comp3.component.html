@@ -1,0 +1,18 @@
+<h3>subject-assign-comp3 </h3>
+
+<div class="container border border-dark bg-white">
+    <label for="firstname">First Name </label> &nbsp;
+    <input type="text" class="mt-4" required placeholder="please enter first name" #fname>
+    <br>
+    <label for="firstname">Last Name </label> &nbsp;
+    <input type="text" class="content-inline mt-4" required placeholder="please enter first name" #lname>
+<div class=" mt-4">
+    <button type="submit" class="btn btn-primary" (click)="updateName()">Submit</button>
+</div>
+<div class="">
+    First Name : <strong>{{firstName}}</strong>
+</div>
+<div class="">
+    Last Name : <strong>{{lastName}}</strong>
+</div>
+</div>

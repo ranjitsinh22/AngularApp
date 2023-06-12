@@ -3,3 +3,4 @@ input.ng-invalid.ng-touched{
     box-shadow: 0 0 5px #ff000021;
 }
 /* if user only touched but not submitted any value then border of input become red,this class provided by ngModel */
+

@@ -1,0 +1,21 @@
+{
+  "todo-list": [
+    {
+      "id": 1,
+      "title": "practice JS program daily"
+    }
+
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "email": "user@example.com",
+      "password": "password123"
+    }
+  ],
+  "products": []
+
+
+
+}

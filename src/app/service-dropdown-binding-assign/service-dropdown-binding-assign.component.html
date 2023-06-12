@@ -1,0 +1,88 @@
+<h1>@Dropdown Assignment - Service CRUD</h1>
+
+<div class="container-fluid border border-dark">
+  <div class="row">
+    <div class="col-md-4 text-center border border-right border-dark">
+      <div class="form py-4">
+        <form #myForm="ngForm">
+          <div class="form-group py-2">
+            <label for="state"><h4>Select State</h4></label>
+            <select class="form-control" id="state" (change)="fetchStates()" [(ngModel)]="stateId" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>Select State</option>
+              <option *ngFor="let item of statesArr" [value]="item.id">{{ item.state }}</option>
+            </select>
+          </div>
+          <div class="form-group py-2">
+            <label for="division"><h4>Select Division</h4></label>
+            <select class="form-control" id="division" (change)="getDivisionByStateId()" [(ngModel)]="divisionId" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>Select Division</option>
+              <option *ngFor="let item of divisionsArr" [value]="item.divCode">{{ item.division }}</option>
+            </select>
+          </div>
+          <div class="form-group py-2">
+            <label for="district"><h4>Select District</h4></label>
+            <select class="form-control" id="district" (change)="getDistrictByDivisionId()" [(ngModel)]="districtId" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>Select District</option>
+              <option *ngFor="let item of districtsArr" [value]="item.id">{{ item.district }}</option>
+            </select>
+          </div>
+          <div class="form-group py-2">
+            <label for="taluka"><h4>Select Taluka</h4></label>
+            <select class="form-control" id="taluka" (change)="getTalukaByDistrictId()" [(ngModel)]="talukaId" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>Select Taluka</option>
+              <option *ngFor="let item of talukasArr" [value]="item.id">{{ item.m_Taluka }}</option>
+            </select>
+          </div>
+          <div class="form-group py-2">
+            <label for="village"><h4>Select Village</h4></label>
+            <select class="form-control" id="village" (change)="getVillageByTalukaId()" [(ngModel)]="villageId" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>Select Village</option>
+              <option *ngFor="let item of villagesArr" [value]="item.id">{{ item.name }}</option>
+            </select>
+          </div>
+          
+     
+      <div class="py-4">
+        <button type="submit" class="submit btn btn-primary"  (click)="submitData(myForm.value)">Submit</button>
+        <button type="reset" class="reset btn btn-warning " (click)="resetData()">Clear</button>
+    
+      </div>
+    </form>
+    </div>
+    </div>
+
+
+    <div class="col-md-8">
+      <div class="table py-4">
+        <table class="table border border-dark bg-light">
+          <thead>
+            <tr>
+              <th scope="col">Sr.No</th>
+              <th scope="col">State</th>
+              <th scope="col">Division</th>
+              <th scope="col">District</th>
+              <th scope="col">Taluka</th>
+              <th scope="col">Village</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of newArr; index as i">
+              <td>{{i+1}}</td>
+              <td>{{item.state}}</td>
+              <td>{{item.division}}</td>
+              <td>{{item.district}}</td>
+              <td>{{item.m_Taluka }}</td>
+              <td>{{item.name}}</td>
+              <td> <button class="btn btn-warning" (click)="OnEdit(item.id)">Edit</button></td>
+              <td><button class="btn btn-danger" (click)="OnDelete(item)">Delete</button></td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>
+
+</div>

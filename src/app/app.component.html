@@ -8,7 +8,7 @@ The content below is only a placeholder and can be replaced.
 
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Here are some links to help you start: </h2>
+<h2 appCustom>Here are some links to help you start: </h2>
 <ul>
   <li>
     <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
@@ -21,7 +21,11 @@ The content below is only a placeholder and can be replaced.
   </li>
 </ul>
   
+<!-- <input type="date" [(ngModel)]="age">
+<button class="btn btn-primary" (click)="ageCalculator">Calculate Age</button>
+<p *ngIf="age">{{showAge}}</p>
 
+<button class="btn btn-success" (click)="getUserData()">Get User Data</button> -->
 
 <!-- <app-databinding></app-databinding>
 <app-test2></app-test2>
@@ -38,8 +42,7 @@ The content below is only a placeholder and can be replaced.
 <p>Normal Paragraph</p>
 <p appCustom> Custom Directive Paragraph</p>
 <app-structural-directive-assign></app-structural-directive-assign> -->
-<router-outlet></router-outlet>
-<app-template-form-lecture1></app-template-form-lecture1>
+<!-- <app-template-form-lecture1></app-template-form-lecture1>
 <app-template-form-lecture2></app-template-form-lecture2>
 <app-template-form-lecture3></app-template-form-lecture3>
 <app-template-forms></app-template-forms>
@@ -47,3 +50,82 @@ The content below is only a placeholder and can be replaced.
 <app-template-form-assign2></app-template-form-assign2>
 <app-template-form-assign3></app-template-form-assign3>
 <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
+<app-reactive-form-lecture1></app-reactive-form-lecture1>
+<app-reactive-form-lecture2></app-reactive-form-lecture2>
+<app-reactive-form-lecture3></app-reactive-form-lecture3>
+<app-reactive-form-assig></app-reactive-form-assig>
+<app-reactive-form-assign2></app-reactive-form-assign2>
+<app-reactive-form-assign3></app-reactive-form-assign3> -->
+<!-- <app-service1></app-service1>
+<app-service2></app-service2>
+<app-service3></app-service3>
+<app-observable></app-observable>
+<app-post></app-post> -->
+<!-- <app-service-employee-assign></app-service-employee-assign> -->
+<!-- <app-todo></app-todo> -->
+<!-- <app-service-dropdown-binding-assign></app-service-dropdown-binding-assign> -->
+<!-- <app-state></app-state>
+<app-rapid-api></app-rapid-api> -->
+<!-- <app-crickbuzz-api></app-crickbuzz-api>
+<app-cricketinfo></app-cricketinfo> -->
+<!-- <app-giphy></app-giphy> -->
+<!-- <app-firebase></app-firebase>
+<app-search-api-assign></app-search-api-assign> -->
+
+
+<!-- 
+<div style="text-align: center border border-dark">
+  <h1>@Subject and Behaviour Subject </h1>
+  <div class="row">
+    <div class="col-md-6">
+<app-component1></app-component1>
+</div>
+<div class="col-md-6">
+<app-component2></app-component2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<app-component3></app-component3>
+</div>
+<div class="col-md-6">
+<app-component4></app-component4>
+</div>
+</div>
+</div> -->
+
+<!-- subject -->
+<!-- <h1>@Subject Assignment</h1>
+
+<div class="container border border-dark bg-info">
+<div class="row">
+<div class="col-md-4">
+  <app-subject-assign-comp1></app-subject-assign-comp1>
+</div>
+<div class="col-md-4">
+  <app-subject-assign-comp2></app-subject-assign-comp2>
+</div>
+<div class="col-md-4">
+  <app-subject-assign-comp3></app-subject-assign-comp3>
+</div>
+</div>
+</div> -->
+
+
+<hr>
+<nav>
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a routerLinkActive="active myclass" routerLink="home" class="nav-link">Home</a></li>
+    <li class="nav-item"><a routerLinkActive="active myclass" routerLink="about-us" class="nav-link">About Us</a></li>
+    <li class="nav-item"><a routerLinkActive="active myclass"  routerLink="contact-us" class="nav-link">Contact Us</a></li>
+    <li class="nav-item"><a routerLinkActive="active myclass" routerLink="product" class="nav-link">Product</a></li>
+    <li class="nav-item"><a   routerLinkActive="active myclass" routerLink="posts" class="nav-link">Posts</a></li>  
+    <li class="nav-item"><a   routerLinkActive="active myclass" routerLink="pipe" class="nav-link">Pipe</a></li> 
+   </ul>
+</nav>
+
+
+<h1>@Producr - Routing Lecture</h1>
+<router-outlet></router-outlet>
+
