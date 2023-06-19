@@ -1,0 +1,67 @@
+<div class="ng-container">
+
+  <!-- filter -->
+  <div class="ng-container">
+    <div class="filter-container">
+      <label>Filter:</label>
+      <select [(ngModel)]="filterStatus">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+
+    <!-- table list -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sr.No.</th>
+          <th>Title</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Check Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of filteredTasks; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <ng-container *ngIf="!task.editableTitle; else editTitleField">
+              {{ task.title }}
+            </ng-container>
+            <ng-template #editTitleField>
+              <input type="text" [(ngModel)]="task.updatedTitle" *ngIf="task.editableTitle">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="!task.editableDueDate; else editDueDateField">
+              {{ task.dueDate | date }}
+              <!-- pipe used here -->
+            </ng-container>
+            <ng-template #editDueDateField>
+              <input type="text" [(ngModel)]="task.updatedDueDate" *ngIf="task.editableDueDate">
+            </ng-template>
+          </td>
+          <td>
+            <span *ngIf="task.completed; else pendingStatus" class="status-completed">Completed</span>
+            <ng-template #pendingStatus>
+              <span class="status-pending">Pending</span>
+            </ng-template>
+          </td>
+          <td>
+            <input type="checkbox" [(ngModel)]="task.completed" (change)="markAsCompleted(task)">
+          </td>
+          <td>
+            <button class="edit-btn" (click)="editTask(task)">Edit</button>
+            <!-- if task is editable then only update button will appear -->
+            <button class="edit-btn" *ngIf="task.editableTitle" (click)="updateTask(task)">Update</button>
+            <button id="delete-btn" mat-fab color="primary" aria-label="Example icon button with a delete icon"
+              (click)="deleteTask(task)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

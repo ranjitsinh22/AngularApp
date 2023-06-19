@@ -1,0 +1,71 @@
+
+
+/* form */
+.task-form {
+    border: 1px solid black;
+    max-width: 600px;
+    margin: auto;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color:#ecf0f1;
+  }
+  
+  .task-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+  }
+  
+  .task-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .task-form input[type="text"]{
+    width: 150%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+  }
+  .task-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .task-form button[type="submit"] {
+    padding: 10px 20px;
+    margin-left: 10px;
+    align-items: start;
+    background-color: #8e2dfd;
+    color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .task-form button[type="submit"]:hover {
+    background-color: #170cac;
+    text-decoration: antiquewhite;
+  }
+  
+  .title {border: 1px solid brown;
+    background-color: rgb(61, 254, 248);
+    text-align: center;
+    font-size: 35px;
+    padding: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
