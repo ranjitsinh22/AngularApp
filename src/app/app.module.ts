@@ -45,9 +45,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import{EmployeeService} from './service/employee.service';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 import { Service3Component } from './service3/service3.component';
 import { TypescriptLectureComponent } from './typescript-lecture/typescript-lecture.component'
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { ObservableComponent } from './observable/observable.component';
 import { PostComponent } from './post/post.component';
@@ -84,6 +87,16 @@ import { PipeComponent } from './pipe/pipe.component';
 import { FilterPipe } from './filter.pipe';
 import { LoginCartComponent } from './login-cart/login-cart.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { HooksComponent } from './hooks/hooks.component';
+import { CartComponent } from './cart/cart.component';
+import { HeaderComponent } from './header/header.component';
+import { CartService } from './service/cart.service';
+import { UserGridComponent } from './user-grid/user-grid.component';
+import { AsyncComponent } from './async/async.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
+import { DiscountCalculatorComponent } from './discount-calculator/discount-calculator.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskFormComponent } from './task-form/task-form.component';
 
 @NgModule({
   declarations: [
@@ -153,6 +166,16 @@ import { HomepageComponent } from './homepage/homepage.component';
     FilterPipe,
     LoginCartComponent,
     HomepageComponent,
+    HooksComponent,
+    CartComponent,
+    HeaderComponent,
+    UserGridComponent,
+    AsyncComponent,
+    RxjsComponent,
+    DiscountCalculatorComponent,
+    TaskListComponent,
+    TaskFormComponent,
+  
    
   ],
   imports: [
@@ -175,8 +198,12 @@ import { HomepageComponent } from './homepage/homepage.component';
   MatButtonModule,
   HttpClientModule,
   MatSidenavModule,
+  MatListModule,
+  MatCardModule,
+  MatTableModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService,CartService],
+  // {provider:HTTP_INTERCEPTORS}
   bootstrap: [AppComponent]
 })
 export class AppModule { }

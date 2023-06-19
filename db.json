@@ -1,64 +1,9 @@
 {
-  "posts": [
+  "task":[
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id":1,
+      "taskName":"to do app"
+      
     }
-  ],
-  "loginUser": [
-    {
-      "email": "ranjitsinh425gavali@gmail.com",
-      "password": "12345",
-      "id": 1
-    },
-    {
-      "email": "ranjitsinh425gavali@codemindtechnology.com",
-      "password": "abc@123",
-      "id": 2
-    },
-    {
-      "email": "ranjitsinh8425@gmail.com",
-      "password": "121212",
-      "id": 3
-    },
-    {
-      "email": "ranjitsinh8425@gmail.com",
-      "password": "asasas",
-      "id": 4
-    },
-    {
-      "email": "ranjitsinh425gavali@gmail.com",
-      "password": "123123",
-      "id": 5
-    },
-    {
-      "email": "ranjitsinh8425@gmail.com",
-      "password": "njknl",
-      "id": 6
-    },
-    {
-      "email": "ranjitsinh425gavali@codemindtechnology.com",
-      "password": "mklmlk",
-      "id": 7
-    },
-    {
-      "email": "ranjitsinh425gavali@codemindtechnology.com",
-      "password": "werty",
-      "id": 8
-    },
-    {
-      "email": "anjitsinh8425@gmail.com",
-      "password": "abc@123",
-      "id": 9
-    },
-    {
-      "email": "ranjitsinh8425@gmail.com",
-      "password": "Abc@123",
-      "id": 10
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -73,6 +73,21 @@ The content below is only a placeholder and can be replaced.
 <!-- <app-firebase></app-firebase>
 <app-search-api-assign></app-search-api-assign> -->
 
+<!-- <app-user-grid></app-user-grid> -->
+
+<!-- <app-discount-calculator></app-discount-calculator> -->
+
+
+<app-hooks [parentData]="data">
+  <h1 #child>This is child content coming from parent component.</h1>  
+  </app-hooks>
+
+  <button class="btn btn-danger" (click)="OnDestroy()">Destroy Hooks Component</button>
+
+  <!-- <app-async></app-async> -->
+  <app-header></app-header>
+  <app-task-form></app-task-form>
+  <app-task-list></app-task-list>
 
 <!-- 
 <div style="text-align: center border border-dark">
@@ -113,8 +128,7 @@ The content below is only a placeholder and can be replaced.
 </div> -->
 
 
-<hr>
-<nav>
+<!-- <nav>
   <ul class="nav nav-tabs">
     <li class="nav-item"><a routerLinkActive="active myclass" routerLink="home" class="nav-link">Home</a></li>
     <li class="nav-item"><a routerLinkActive="active myclass" routerLink="about-us" class="nav-link">About Us</a></li>
@@ -123,9 +137,16 @@ The content below is only a placeholder and can be replaced.
     <li class="nav-item"><a   routerLinkActive="active myclass" routerLink="posts" class="nav-link">Posts</a></li>  
     <li class="nav-item"><a   routerLinkActive="active myclass" routerLink="pipe" class="nav-link">Pipe</a></li> 
    </ul>
-</nav>
+</nav> -->
+
+
 
 
 <h1>@Producr - Routing Lecture</h1>
+<!-- <app-login-cart></app-login-cart>
+<app-header></app-header>
+<app-homepage></app-homepage>
+<app-cart></app-cart> -->
+
 <router-outlet></router-outlet>
 

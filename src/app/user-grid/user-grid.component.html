@@ -1,0 +1,26 @@
+<div class="grid-container">
+  <table>
+    <thead>
+      <tr class="header-row">
+        <th>Profile Photo</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td><img [src]="user.picture.thumbnail" alt="User Profile Picture"></td>
+        <td>{{user.name.title}}.{{ user.name.first }} {{ user.name.last }}</td>
+        <td>{{ user.dob.age }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.location.city }}</td>
+        <td>{{ user.location.country }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+<p>discount-calculator works!</p>
+<h1>Discount Calculator</h1>
+
+<div class="container border border-dark">
+  <label for="originalPrice">Original Price:</label>
+  <input type="number" id="originalPrice" [(ngModel)]="originalPrice">
+</div>
+
+<div class="discount">
+  <label for="discountPercentage">Discount Percentage:</label>
+  <input type="number" id="discountPercentage" [(ngModel)]="discountPercentage">
+</div>
+
+<button (click)="calculateDiscountedPrice()">Calculate</button>
+
+<div class="result" *ngIf="discountedPrice !== undefined">
+  <p>Discounted Price: ${{ discountedPrice }}</p>
+</div>

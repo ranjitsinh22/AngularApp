@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../service/todo.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-todo',
@@ -7,6 +8,14 @@ import { TodoService } from '../service/todo.service';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
+
+//unsubscribe to obsevable
+subscription: Subscription;
+
+ngOnDestroy(): void {
+  this.subscription.unsubscribe();
+}
+
 
   todoList: any = [];
   // Inject the todo service
@@ -22,7 +31,8 @@ export class TodoComponent implements OnInit {
       title: `Practice decorator`
     }
 
-    this.todoService.create(todo).subscribe(res => {
+    //assign to data
+  this.subscription=  this.todoService.create(todo).subscribe(res => {
       console.log('todo create', res);
       this.getTodos();
     })

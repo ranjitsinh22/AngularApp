@@ -1,0 +1,52 @@
+.grid-container {
+  border: 1px solid brown;
+  overflow-y: auto;
+  height: 850px;
+  position: relative;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+th{
+  border: 1px solid #080808;
+  padding: 8px;
+  text-align: left;
+  font-size: 30px;
+}
+td {
+  border: 1px solid #070707;
+  padding: 8px;
+  text-align: left;
+  font-size: larger;
+}
+
+.header-row {
+  position: sticky;
+  top: 0;
+  background-color: #3ae5f8;
+  z-index: 1;
+}
+
+.profile-pic img {
+  width: 100px;
+  height: 150px;
+}
+img, svg {
+  vertical-align: middle;
+  height: 107px;
+  width: 114px;
+  border-radius: 10px;
+}
+tbody tr:nth-child(even) {
+  background-color: #fafefd;
+}
+
+tbody tr:hover {
+  background-color: #bdf0f5;
+}

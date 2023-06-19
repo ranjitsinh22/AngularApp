@@ -7,9 +7,12 @@ import { FirebaseService } from './service/firebase.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularapp';
-  userService: any;
+  title = 'TodoList';
+  show = true;
 
+  // title = 'angularapp';
+  userService: any;
+  isDestory: boolean = true;
   //firebase Service Called
   constructor(private firebaseServce:FirebaseService) {
    //instance or object ...given by angular or provider
@@ -38,5 +41,13 @@ getUserData(){
   })
 }
 
+data : string = 'red';
+changecolor() {
+  this.data = 'blue';
+  }
+
+OnDestroy() {
+  this.isDestory = false;
+}
 
 }

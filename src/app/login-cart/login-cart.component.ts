@@ -63,12 +63,14 @@ export class LoginCartComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+  // Perform login logic here (e.g., API call, authentication, etc.)
+  const email = this.email.value;
+  const password = this.password.value;
 
-    // Perform login logic here (e.g., API call, authentication, etc.)
-    const email = this.email.value;
-    const password = this.password.value;
-
-    // Clear form fields after successful login
-    this.loginForm.reset();
+  // Clear form fields after successful login
+  this.loginForm.reset();
+ 
   }
+  
 }
+ 
