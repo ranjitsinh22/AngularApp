@@ -8,6 +8,8 @@ import { Task } from '../model/task';
 })
 export class TaskService {
   private tasks: Task[] = [];
+  showTaskList = false;
+  newTask: any = {};
 
   constructor() { }
 

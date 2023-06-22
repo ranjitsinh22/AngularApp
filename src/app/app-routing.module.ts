@@ -59,11 +59,13 @@ import { TaskFormComponent } from './task-form/task-form.component';
 // {path:'cart',component:CartComponent}
 // ]
 
-
+//task management app
 const routes: Routes = [
-  // { path: '', component: HeaderComponent },
-  // { path: 'taskForm', component: TaskFormComponent },
+  { path: '', redirectTo: '/header', pathMatch: 'full' },
+  { path: 'taskForm', component: TaskFormComponent },
+  { path: 'taskList', component: TaskListComponent },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

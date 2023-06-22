@@ -20,6 +20,7 @@ export class TaskListComponent {
   }
 
 
+  //checkbox value 
   markAsCompleted(task: any) {
     task.completed = !task.completed;
     
